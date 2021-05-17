@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Yemek Kutusu</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Drone ile Yemek Siparişi">
+    <meta name="keyword" content="yemek,drone,hızlı sipariş">
+
+    <link href="css/galata-dashboard.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js">
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['McDonalds', 11],
+                ['Tavuk Dünyası', 2],
+                ['KFC', 2],
+                ['Yerel Restaurantlar', 2],
+                ['Dominos Pizza', 7]
+            ]);
+
+            var options = {
+                title: 'En Çok Tercih Edilen Restaurantlar'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+        }
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {
+            packages: ['corechart']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ["Element", "Yoğunluk", {
+                    role: "style"
+                }],
+                ["Pazartesi", 8.94, "#0D4F8B"],
+                ["Çarşamba", 10.49, "silver"],
+                ["Cuma", 19.30, "#70BDDC"],
+                ["Pazar", 21.45, "color: #e5e4e2"]
+
+            ]);
+
+            var view = new google.visualization.DataView(data);
+            view.setColumns([0, 1, {
+                    calc: "stringify",
+                    sourceColumn: 1,
+                    type: "string",
+                    role: "annotation"
+                },
+                2
+            ]);
+
+            var options = {
+                title: "Ön Plana Çıkan Gün-Sipariş Sayısı Ortalamaları (Ortalama 5 Üzeri)",
+                bar: {
+                    groupWidth: "95%"
+                },
+                legend: {
+                    position: "none"
+                },
+            };
+            var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+            chart.draw(view, options);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="title">
+            <div class: "logo">
+                <img class="logo1" src="https://i.hizliresim.com/EQpMm0.png">
+            </div>
+            <a href="#"><strong>YK</strong></a>
+            <i class="fas fa-utensils"></i>
+        </div>
+        <div class="dot">
+            <i class="fas fa-ellipsis-h"></i>
+        </div>
+        <div class="sidebarnotif">
+            <div class="message">
+                <div class="note">
+                    <i class="far fa-envelope"></i>
+                </div>
+            </div>
+            <div class: "note2">
+                <i class="far fa-sticky-note"></i>
+            </div>
+            <div class=: "note3">
+                <i class="far fa-calendar"></i>
+            </div>
+            <div class: "note4">
+                <i class="far fa-chart-bar"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="header">
+            <i class="fas fa-align-justify"></i>
+            <div class="not">
+                <i class="fas fa-th-large"></i>
+                <i class="fas fa-bell"></i>
+                <i class="fas fa-circle"></i>
+                <i class="fas fa-ellipsis-v"></i>
+            </div>
+            <div class="headerInfo">
+                <img src="https://www.haberler.com/trend/71/henry-cavill_9044_b.jpg">
+                <span>Oğulcan Galata</span>
+                <i class="fas fa-arrow-down"></i>
+            </div>
+        </div>
+        <div class="main">
+            <div class="nav">
+                <span class="dash">Dashboard</span>
+                <div class="navigation">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Home</span>
+                    <span>></span>
+                    <span>Dashboard</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="boxes">
+            <div class="box1">
+                <div class="value">
+                    <i class="fas fa-users"></i>
+                    <span class="yazi">Müşteriler</span>
+                    <span class="bos">7430</span>
+                </div>
+                <i class="fas fa-info-circle"></i>
+
+            </div>
+            <div class="box2">
+                <div class="value">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="yazi2">Siparişler</span>
+                    <span class="bos2">12907</span>
+                </div>
+                <i class="fas fa-info-circle"></i>
+
+            </div>
+            <div class="box3">
+                <div class="value">
+                    <i class="fas fa-truck"></i>
+                    <span class="yazi3">Teslimatlar</span>
+                    <span class="bos3">12907</span>
+                </div>
+                <i class="fas fa-info-circle"></i>
+
+            </div>
+            <div class="box4">
+                <div class="value">
+                    <i class="fas fa-user-check"></i>
+                    <span class="yazi4">Kullanıcılar</span>
+                    <span class="bos4">12907</span>
+                </div>
+                <i class="fas fa-info-circle"></i>
+
+            </div>
+
+            <div class="ayni">
+                <div class="box5">
+                    <div class="yazi5">
+                        <span class="yazi4">Faturalar</span>
+                    </div>
+                    <div class="value">
+                        <div class="due">
+                            <span class="due">Beklenen</span>
+                            <span class="numb">$1838</span>
+                        </div>
+                        <div class="over">
+                            <span class="over">Vadesi Geçen</span>
+                            <span class="numb2">$1838</span>
+                        </div>
+                    </div>
+
+                    <i class="fas fa-info-circle"></i>
+
+
+                </div>
+                <div class="box6">
+                    <div class="yazi6">
+                        <span class="month">Aylık Gelir</span>
+                    </div>
+                    <div class="value">
+                        <div class="grow">
+                            <span class="grow">Büyüme</span>
+                            <span class="numb">$1838</span>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-money-check-alt"></i>
+                        </div>
+                    </div>
+
+                    <i class="fas fa-info-circle"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="grafik">
+            <div class="grafik1">
+                <div id="piechart" style="width: 100%; height: 100%;"></div>
+            </div>
+            <div class="grafik2">
+                <div id="columnchart_values" style="width: 100%; height: 100%;"></div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>
